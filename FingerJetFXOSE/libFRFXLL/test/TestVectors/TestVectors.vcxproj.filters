@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImage.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImage1000.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImage10vf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImage200.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImage250.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImage300.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageAuthentec01.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageAuthentec02.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageBad0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageBad1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageBad2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageBad3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageBrcm00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageMartini.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageMartiniCE.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageOneLine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageUpekSwipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImageValidity.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestAnsiImage_100_100.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestFingerMinutiaRecords.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\TestIsoImage.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\testRawImage.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\test\TestVectors\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{7A46819D-8F92-327A-B3EC-6CECD420B3CC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

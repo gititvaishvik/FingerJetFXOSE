@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\dist\FingerJetFXOSE\Release\FJFX.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\dist\FingerJetFXOSE\Release\FJFX_MINEX.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\dist\FingerJetFXOSE\Release\FRFXLL.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\dist\FingerJetFXOSE\Release\fjfxSample.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\dist\FingerJetFXOSE\Release\fjfxSample_static.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\dist\FingerJetFXOSE\Release\frfxllSample.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\dist\FingerJetFXOSE\Release\frfxllSample_static.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\x64\Release\ALL_BUILD</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

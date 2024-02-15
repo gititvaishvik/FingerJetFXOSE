@@ -53,6 +53,7 @@ unsigned int CalculateCRC(const unsigned char data[], size_t size)
   for ( size_t i = 0; i < size; i++ )
   {
     cipher = ( data[i] ^ (r>>8) );
+
     r = (cipher + r) * c1 + c2;
     sum += cipher;
   }
@@ -305,7 +306,7 @@ void TestGetMinutiae(unsigned char* data, size_t *size) {
   unsigned int num_minutia = 0;
   unsigned int minutia_ppi = 0;
   UT_ASSERT_OK(FRFXLLGetMinutiaInfo(hFeatureSet,&num_minutia,&minutia_ppi));
-//  printf("num minutia %u\n",num_minutia);
+  printf("num minutia %u\n",num_minutia);
   UT_ASSERT(num_minutia == 89);
 //  UT_ASSERT(minutia_ppi == test_raw_image_333.resolution);	// this should be how it works, but it is not! all minutia scaled to 500
   UT_ASSERT(minutia_ppi == 500);
@@ -314,7 +315,8 @@ void TestGetMinutiae(unsigned char* data, size_t *size) {
   UT_ASSERT(minutiae != NULL);
 
   UT_ASSERT_OK(FRFXLLGetMinutiae(hFeatureSet, BASIC_19794_2_MINUTIA_STRUCT, &num_minutia, minutiae));
-//  printf("CRC %u\n",CalculateCRC((const unsigned char*) minutiae,num_minutia*sizeof(struct FRFXLL_Basic_19794_2_Minutia)));
+
+  printf("CRC %u\n",CalculateCRC((const unsigned char*) minutiae,num_minutia*sizeof(struct FRFXLL_Basic_19794_2_Minutia)));
   UT_ASSERT(CalculateCRC((const unsigned char*) minutiae,num_minutia*sizeof(struct FRFXLL_Basic_19794_2_Minutia)) == 184959);
 
   free(minutiae);
@@ -410,6 +412,8 @@ int RunTests() {
   memset( data, 0, size);
   TestGetMinutiae(data, &size);
   _printf(("."));
+  _printf((" print data %c",data));
+
   size = sizeof(data);  
   memset( data, 0, size);
   TestCreateEmptyFeatureSet(data, &size);

@@ -20,6 +20,7 @@
 #include "CreateFtrSet.h"
 
 typedef FeatureExtractionObj<Engine::FeatureExtraction> FexObj;
+
 FRFXLL_RESULT FRFXLLCreateFeatureSetFromRaw(
   FRFXLL_HANDLE hContext,          ///< [in] Handle to a fingerprint recognition context
   const unsigned char fpData[],    ///< [in] sample

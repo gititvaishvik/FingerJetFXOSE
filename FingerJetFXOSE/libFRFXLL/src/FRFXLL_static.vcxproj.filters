@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLCreateContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLCreateFeatureSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLCreateFeatureSetFromRaw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLCreateFeatureSetInPlace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLCreateFeatureSetInPlaceFromRaw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLCreateLibraryContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLDuplicateHandle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLGetLibraryVersion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\lib\FRFXLLGetMinutiae.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Mantra\Documents\repos\FingerJetFXOSE\FingerJetFXOSE\libFRFXLL\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{7A46819D-8F92-327A-B3EC-6CECD420B3CC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

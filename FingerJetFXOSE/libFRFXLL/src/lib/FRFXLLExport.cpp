@@ -46,20 +46,22 @@ FRFXLL_RESULT FRFXLLCreateEmptyFeatureSet(
   return rv;
 }
 
+
+
 FRFXLL_RESULT FRFXLLExport(
-  FRFXLL_HANDLE handle,          ///< [in] Handle to data object to export
-  FRFXLL_DATA_TYPE dataType,     ///< [in] Type and format of data to export
-  const FRFXLL_OUTPUT_PARAM_ISO_ANSI * parameters,     ///< [in] parameters structure, specific to the data type
-  unsigned char pbData[],      ///< [out] Buffer where to export the data, optional
-  size_t * pcbData             ///< [in/out] Pointer where to store the length of exported data, optional
+    FRFXLL_HANDLE handle,          ///< [in] Handle to data object to export
+    FRFXLL_DATA_TYPE dataType,     ///< [in] Type and format of data to export
+    const FRFXLL_OUTPUT_PARAM_ISO_ANSI* parameters,     ///< [in] parameters structure, specific to the data type
+    unsigned char pbData[],      ///< [out] Buffer where to export the data, optional
+    size_t* pcbData             ///< [in/out] Pointer where to store the length of exported data, optional
 ) {
-  if (pcbData == NULL) {
-    return FRFXLL_ERR_INVALID_PARAM;
-  }
-  switch (dataType) {
+    if (pcbData == NULL) {
+        return FRFXLL_ERR_INVALID_PARAM;
+    }
+    switch (dataType) {
     case FRFXLL_DT_ISO_FEATURE_SET:
     case FRFXLL_DT_ANSI_FEATURE_SET:
-      return Invoke(&FpFtrSetObj::Export, handle, dataType, parameters, pbData, pcbData);
-  }
-  return FRFXLL_ERR_INVALID_PARAM;
+        return Invoke(&FpFtrSetObj::Export, handle, dataType, parameters, pbData, pcbData);
+    }
+    return FRFXLL_ERR_INVALID_PARAM;
 }

@@ -1,0 +1,10 @@
+^C:\USERS\MANTRA\DOCUMENTS\REPOS\FINGERJETFXOSE\FINGERJETFXOSE\LIBMINEX\SRC\CMAKELISTS.TXT
+setlocal
+C:\Users\Mantra\miniconda3\Library\bin\cmake.exe -SC:/Users/Mantra/Documents/repos/FingerJetFXOSE/FingerJetFXOSE -BC:/Users/Mantra/Documents/repos/FingerJetFXOSE/FingerJetFXOSE --check-stamp-file C:/Users/Mantra/Documents/repos/FingerJetFXOSE/FingerJetFXOSE/libMINEX/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

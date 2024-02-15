@@ -29,6 +29,7 @@
 */
 
 #include <string.h>
+#include <stdio.h>
 #include "FJFX.h"
 #include "FRFXLL.h"
 
@@ -70,6 +71,7 @@ int fjfx_create_fmd_from_raw(
   const unsigned int output_format,
   void   *fmd,
   unsigned int *size_of_fmd_ptr
+ 
 ) {
   if (fmd == NULL)       return FJFX_FAIL_EXTRACTION_UNSPEC;
   if (raw_image == NULL) return FJFX_FAIL_EXTRACTION_BAD_IMP;

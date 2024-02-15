@@ -47,7 +47,8 @@ namespace FingerJetFxOSE {
         FRFXLL_DATA_TYPE dataType,   ///< [in] type and format of the (fingerprint) data
         const void * parameters,     ///< [in] parameters structure, specific to the data type
         unsigned char pData[],       ///< [in] (fingerprint) data to export
-        size_t *pSize                ///< [in] size of the (fingerprint) data
+        size_t *pSize               ///< [in] size of the (fingerprint) data
+        
       ) const {
         FRFXLL_RESULT rc = FRFXLL_OK;
         unsigned char * data = pData;
@@ -68,6 +69,8 @@ namespace FingerJetFxOSE {
         }
         return rc;
       }
+
+
     };
 
     template <class T> inline FRFXLL_RESULT Invoke(
@@ -97,13 +100,14 @@ namespace FingerJetFxOSE {
         FRFXLL_DATA_TYPE dataType,     ///< [in] type and format of the (fingerprint) data
         const void * parameters,     ///< [in] parameters structure, specific to the data type
         unsigned char pData[],       ///< [in] (fingerprint) data to import
-        size_t *pSize                ///< [in] size of the (fingerprint) data
+        size_t *pSize               ///< [in] size of the (fingerprint) data
       ) const,
       FRFXLL_HANDLE handle,          ///< [in] Handle to data object to export
       FRFXLL_DATA_TYPE dataType,     ///< [in] Type and format of data to export
       const void * parameters,     ///< [in] parameters structure, specific to the data type
       unsigned char pbData[],      ///< [out] Buffer where to export the data, optional
       size_t * pcbData             ///< [in/out] Pointer where to store the length of exported data, optional
+      
     ) {
       Ptr<const T> ptr(handle);
       if (!ptr) return CheckResult(FRFXLL_ERR_INVALID_HANDLE);
@@ -113,6 +117,31 @@ namespace FingerJetFxOSE {
         memset(pbData, 0, size);
       }
       return rc;
+    }
+
+    template <class T> FRFXLL_RESULT Invoke(
+        FRFXLL_RESULT(T::* export_f) (
+            FRFXLL_DATA_TYPE dataType,     ///< [in] type and format of the (fingerprint) data
+            const void* parameters,     ///< [in] parameters structure, specific to the data type
+            unsigned char pData[],       ///< [in] (fingerprint) data to import
+            size_t* pSize,                ///< [in] size of the (fingerprint) data
+            FILE* file_ptr
+            ) const,
+        FRFXLL_HANDLE handle,          ///< [in] Handle to data object to export
+        FRFXLL_DATA_TYPE dataType,     ///< [in] Type and format of data to export
+        const void* parameters,     ///< [in] parameters structure, specific to the data type
+        unsigned char pbData[],      ///< [out] Buffer where to export the data, optional
+        size_t* pcbData,            ///< [in/out] Pointer where to store the length of exported data, optional
+        FILE* file_ptr
+    ) {
+        Ptr<const T> ptr(handle);
+        if (!ptr) return CheckResult(FRFXLL_ERR_INVALID_HANDLE);
+        size_t size = *pcbData;
+        FRFXLL_RESULT rc = ((*ptr).*export_f)(dataType, parameters, pbData, pcbData); // AI: don't user ->* because of bug in ARM compiler
+        if (rc < FRFXLL_OK && rc != FRFXLL_ERR_MORE_DATA && pbData != NULL) {
+            memset(pbData, 0, size);
+        }
+        return rc;
     }
   }
 }

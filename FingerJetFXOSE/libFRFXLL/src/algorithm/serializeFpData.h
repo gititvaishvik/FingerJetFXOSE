@@ -133,6 +133,16 @@ namespace FingerJetFxOSE {
         Writer & operator << (int32 x) {
           return *this << (uint32)x;
         }
+        // Overload for writing a string
+        Writer& operator << (const char* str) {
+            size_t len = strlen(str);
+            for (size_t i = 0; i < len; ++i) {
+                putch(static_cast<uint8>(str[i]));
+            }
+            return *this;
+        }
+       
+
       };
       struct Reversed {
         Writer & w;
@@ -227,7 +237,8 @@ namespace FingerJetFxOSE {
           uint8 minQ = 0xff;
           uint16 sizeX = 0;
           uint16 sizeY = 0;
-
+          printf("x,y,theta,Confidence,type\n");
+          //printf("\t");
           unsigned int mr_ppcm = muldiv(md.minutia_resolution_ppi,197,500);
                     
           for ( size_t i = 0; i < num; i++ ) {
@@ -242,16 +253,22 @@ namespace FingerJetFxOSE {
 
             if ( pos.x > sizeX ) sizeX = pos.x;
             if ( pos.y > sizeY ) sizeY = pos.y;
+           /* printf("\nx,y : (%d, %d)", pos.x, pos.y);
+            printf(" theta: (%d)", md.minutia[i].theta);*/
+            
 
-            wr << uint16((pos.x & 0x3FFF) | (md.minutia[i].type << 14));    // X
-            wr << uint16(pos.y & 0x3FFF);                                   // Y
+            //wr << uint16((pos.x & 0x3FFF) | (md.minutia[i].type << 14));    // X
+            //wr << uint16(pos.y & 0x3FFF);                                   // Y
             WriteTheta(wr, md.minutia[i].theta);                            // Theta
             uint8 currQ = QualityFromConfidence(md.minutia[i].conf);
             wr << currQ;                                                    // Quality
+            printf("%d,%d,%d,%d,%d\n", pos.x, pos.y, md.minutia[i].theta, currQ, md.minutia[i].type);
+            //printf(" theta : %d", md.minutia[i].theta);
+
             minQ = currQ < minQ ? currQ : minQ;
           }
-          ReWriteImageSize(wr, imageSizeX != FRFXLL_IMAGE_SIZE_NOT_SPECIFIED ? imageSizeX : (sizeX + 8), imageSizeY != FRFXLL_IMAGE_SIZE_NOT_SPECIFIED ? imageSizeY : (sizeY + 8));
-          ReWriteQuality(wr, minQ);          
+          //ReWriteImageSize(wr, imageSizeX != FRFXLL_IMAGE_SIZE_NOT_SPECIFIED ? imageSizeX : (sizeX + 8), imageSizeY != FRFXLL_IMAGE_SIZE_NOT_SPECIFIED ? imageSizeY : (sizeY + 8));
+          //ReWriteQuality(wr, minQ);          
         }
         void WriteRecordHeaders(Writer & wr, const MatchData & md) {
           wr.cur = 0;
@@ -268,19 +285,18 @@ namespace FingerJetFxOSE {
         }
         void WriteViewData(Writer & wr, const MatchData & md) {
           wr.cur = viewDataOffset;
-          wr << uint8(fingerPosition);                                      // Finger Position
-          wr << uint8((viewNumber<<4) + (impressionType & 0x0F));           // View Number
-                                                                            // Impression Type
-          wr << fingerQuality;                                              // Finger Quality
+          //wr << uint8(fingerPosition);                                      // Finger Position
+          //wr << uint8((viewNumber<<4) + (impressionType & 0x0F));           // View Number
+                                                 // Finger Quality
           size_t avail = wr.size - wr.cur;                                  // calculate available space
           size_t num = ( ( avail - 3 ) / 6 );                               // maximum minutae to write (already sorted by confidence)
           num = num < md.numMinutia ? num : md.numMinutia;                  // not more than the number of minutiae found, max 255 see MatchData
-          wr << uint8(num);                                                 // Number of Minutiae
+          //printf("Number of Minutiae: %d",num);                                      // Number of Minutiae
           WriteMinutiae(wr, md, num);                                       // 6 bytes per minutae
-          WriteViewEDBHeaders(wr);                                          // 2 bytes
+          //WriteViewEDBHeaders(wr);                                          // 2 bytes
           size_t saved = wr.cur;
           wr.cur = viewDataOffset - 2;
-          wr << uint8(1);                                                   // Number of Finger Views
+          //wr << uint8(1);                                                   // Number of Finger Views
           wr.cur = saved;
         }
         void WriteViewEDBHeaders(Writer & wr) {
@@ -340,6 +356,7 @@ namespace FingerJetFxOSE {
           const void * parameters,
           bool fixedSize,
           FtrCode ftrCode
+            
         ) {
           FRFXLL_RESULT rc = UnpackParameters(parameters);
           if ( rc < FRFXLL_OK ) return rc;
@@ -355,7 +372,7 @@ namespace FingerJetFxOSE {
           size_t   totalLength = 0;
           Writer   wr(dataOut, dataOutSize, true);
           rc = FRFXLL_ERR_MORE_DATA;
-          WriteRecordHeaders(wr, md);
+          //WriteRecordHeaders(wr, md);
           WriteViewData(wr, md);
           rc = size > wr.cur ? FRFXLL_ERR_MORE_DATA : FRFXLL_OK;
           size = wr.cur;
@@ -439,6 +456,7 @@ namespace FingerJetFxOSE {
         FtrCode ftrCode = FtrCode()
       ) {
         AnsiFmdSerializer ansiFS(dataOut, size, isExtended);
+        
         return ansiFS.SerializeFeatureSet(size, md, parameters, fixedSize, ftrCode);
       }
 

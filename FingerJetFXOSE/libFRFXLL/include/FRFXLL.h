@@ -51,6 +51,7 @@
 
 
 #include <stddef.h>
+#include <stdio.h>
 #include "FRFXLL_Results.h"
 // if OK or warning
 #define FRFXLL_SUCCESS(rc) ((rc) >= FRFXLL_OK)
@@ -355,11 +356,12 @@ size when processing the data.
 // a subset of this code will be moved to the minex libray for certification purposes
 DEPRECATED
 FRFXLL_RESULT FRFXLL_EXPORT FRFXLLExport(
-  FRFXLL_HANDLE handle,          ///< [in] Handle to data object to export
-  FRFXLL_DATA_TYPE dataType,     ///< [in] Type and format of data to export
-  const FRFXLL_OUTPUT_PARAM_ISO_ANSI * parameters,     ///< [in] parameters structure, specific to the data type
-  unsigned char pbData[],        ///< [out] Buffer where to export the data, optional
-  size_t * pcbData               ///< [in/out] Pointer where to store the length of exported data, optional
+    FRFXLL_HANDLE handle,          ///< [in] Handle to data object to export
+    FRFXLL_DATA_TYPE dataType,     ///< [in] Type and format of data to export
+    const FRFXLL_OUTPUT_PARAM_ISO_ANSI* parameters,     ///< [in] parameters structure, specific to the data type
+    unsigned char pbData[],        ///< [out] Buffer where to export the data, optional
+    size_t* pcbData             ///< [in/out] Pointer where to store the length of exported data, optional
+   
 );
 
 /**
